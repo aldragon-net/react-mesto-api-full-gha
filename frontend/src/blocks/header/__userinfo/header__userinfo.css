@@ -1,0 +1,11 @@
+.header__userinfo {
+  font-size: 18px;
+  line-height: 22px;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .header__userinfo {
+      display: none;
+    }
+  }

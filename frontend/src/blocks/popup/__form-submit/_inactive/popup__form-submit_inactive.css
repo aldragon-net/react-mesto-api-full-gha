@@ -1,0 +1,7 @@
+.popup__form-submit_inactive, .popup__form-submit_inactive:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  opacity: 0.2;
+  cursor: not-allowed;
+}

@@ -1,0 +1,18 @@
+.place__like-icon {
+    width: 22px;
+    height: 19px;
+    background: url("../../../images/icons/heart_empty.svg") no-repeat;
+    background-size: 22px 19px;
+    background-position: center;
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    flex-shrink: 0;
+}
+
+@media (hover: hover) {
+  .place__like-icon:hover {
+    opacity: 0.5;
+  }
+}

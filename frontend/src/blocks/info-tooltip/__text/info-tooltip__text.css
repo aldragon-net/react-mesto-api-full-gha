@@ -1,0 +1,9 @@
+.info-tooltip__text {
+  margin: 32px 0 0;
+  font-size: 24px;
+  line-height: 1.21;
+  font-weight: 900;
+  color: black;
+  max-width: 358px;
+  text-align: center;
+}

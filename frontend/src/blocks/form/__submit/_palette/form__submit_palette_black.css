@@ -1,0 +1,10 @@
+.form__submit_palette_black {
+    background-color: white;
+    color: black;
+  }
+  
+@media (hover: hover) {
+  .form__submit_palette_black:hover {
+    background-color: #dddddd;
+  }
+}
