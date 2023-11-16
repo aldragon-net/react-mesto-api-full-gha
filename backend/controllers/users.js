@@ -8,6 +8,17 @@ const { MESSAGES } = require('../utils/messages');
 
 const { NODE_ENV, JWT_SECRET } = process.env;
 const JWT_KEY = NODE_ENV === 'production' ? JWT_SECRET : 'dev-not-so-secret-key';
+const COOKIES_OPTIONS = NODE_ENV === 'production'
+  ? {
+    maxAge: 3600000 * 24 * 7,
+    httpOnly: true,
+    sameSite: 'none',
+    secure: true,
+  }
+  : {
+    maxAge: 3600000 * 24 * 7,
+    httpOnly: true,
+  };
 
 module.exports.createUser = (req, res, next) => {
   const {
@@ -92,12 +103,7 @@ module.exports.login = (req, res, next) => {
   return User.findUserByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign({ _id: user._id }, JWT_KEY);
-      res.cookie('jwt', token, {
-        maxAge: 3600000 * 24 * 7,
-        httpOnly: true,
-        sameSite: 'none',
-        secure: true,
-      });
+      res.cookie('jwt', token, COOKIES_OPTIONS);
       res.send({ _id: user._id });
     })
     .catch(next);

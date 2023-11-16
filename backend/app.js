@@ -40,6 +40,12 @@ app.use(requestLogger);
 app.use(cookieParser());
 app.use(bodyParser.json());
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Ooops! Server is crashing!');
+  }, 0);
+});
+
 app.post('/signin', celebrate(userLoginSchema), login);
 app.post('/signup', celebrate(userCreationSchema), createUser);
 app.get('/signout', (req, res) => {
