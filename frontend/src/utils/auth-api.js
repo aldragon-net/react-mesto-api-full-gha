@@ -61,7 +61,7 @@ class AuthApi {
 
   logout () {
     return fetch(
-      this._validationEndpoint,
+      this._logoutEndpoint,
       {
         method: 'POST',
         credentials: 'include',
