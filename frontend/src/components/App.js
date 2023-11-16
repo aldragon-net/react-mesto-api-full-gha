@@ -54,7 +54,7 @@ function App() {
     authApi.validate()
       .then((res) => {
         setIsAuthorized(true);
-        setEmail(res.data.email);
+        setEmail(res.email);
         navigate('/', {replace: true});
       })
       .catch(() => {
