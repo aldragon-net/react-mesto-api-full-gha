@@ -60,7 +60,7 @@ function App() {
       .catch(() => {
         navigate('/signin', {replace: true});
       })
-    }, [navigate]);
+    }, []);
 
 
   const handleEditProfileClick = () => {
