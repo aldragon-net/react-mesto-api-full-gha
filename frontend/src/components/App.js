@@ -51,18 +51,15 @@ function App() {
     }, []);
 
   useEffect(() => {
-    const jwt = localStorage.getItem('jwt');
-    if (jwt) {
-      authApi.validate(jwt)
-        .then((res) => {
-          setIsAuthorized(true);
-          setEmail(res.data.email);
-          navigate('/', {replace: true});
-        })
-        .catch(() => {
-          localStorage.removeItem('jwt');
-        })
-    }
+    authApi.validate()
+      .then((res) => {
+        setIsAuthorized(true);
+        setEmail(res.data.email);
+        navigate('/', {replace: true});
+      })
+      .catch(() => {
+        navigate('/signin', {replace: true});
+      })
     }, [navigate]);
 
 

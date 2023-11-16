@@ -42,16 +42,13 @@ class AuthApi {
       })
   }
 
-  validate (token) {
+  validate () {
     return fetch(
       this._validationEndpoint,
       {
         method: 'GET',
         credentials: 'include',
-        headers: {
-          ...this._headers,
-          "Authorization": `Bearer ${token}` 
-        }
+        headers: this._headers,
       })
       .then((response) => {
         if (response.status === 200 || response.status === 304) {
