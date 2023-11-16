@@ -48,7 +48,7 @@ function App() {
         setCards(cards);
       })
       .catch((err) => {console.log(`Ошибка связи с сервером: ${err}`)})
-    }, []);
+    }, [isAuthorized]);
 
   useEffect(() => {
     authApi.validate()
@@ -175,6 +175,7 @@ function App() {
     authApi.logout()
       .then((res) => {
         setIsAuthorized(false);
+        setCurrentUser({name: '', _id: ''});
         setIsMobileMenuOpen(false);
         setEmail('');
         navigate('/signin', {replace: true});
