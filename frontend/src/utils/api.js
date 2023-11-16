@@ -10,7 +10,8 @@ class Api {
   }
 
   _getResponseOrError (endpoint, options) {
-    return fetch(endpoint, options)
+    const optionsWithCredentials = { ...options, credentials: 'include' }
+    return fetch(endpoint, optionsWithCredentials)
       .then(res => {
         if (res.ok) {
           return res.json();
