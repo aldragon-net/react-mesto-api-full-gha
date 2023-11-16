@@ -31,6 +31,7 @@ class AuthApi {
       {
         method: 'POST',
         headers: this._headers,
+        credentials: 'include',
         body: JSON.stringify({email: email, password: password})
       })
       .then((response) => {
@@ -46,6 +47,7 @@ class AuthApi {
       this._validationEndpoint,
       {
         method: 'GET',
+        credentials: 'include',
         headers: {
           ...this._headers,
           "Authorization": `Bearer ${token}` 
