@@ -163,7 +163,6 @@ function App() {
         setIsAuthorized(true);
         setEmail(userData.email);
         navigate('/', {replace: true});
-        localStorage.setItem('jwt', res.token);
         onSuccess();
       })
       .catch((err) => {
@@ -173,11 +172,17 @@ function App() {
       })
   }
   const handleLogout = () => {
-    setIsAuthorized(false);
-    setIsMobileMenuOpen(false);
-    setEmail('');
-    localStorage.removeItem('jwt');
-    navigate('/signin', {replace: true});
+    authApi.logout()
+      .then((res) => {
+        setIsAuthorized(false);
+        setIsMobileMenuOpen(false);
+        setEmail('');
+        navigate('/signin', {replace: true});
+      })
+      .catch((err) => {
+        console.log(`Ошибка выхода: ${err}`);
+      })
+
   }
 
   return (

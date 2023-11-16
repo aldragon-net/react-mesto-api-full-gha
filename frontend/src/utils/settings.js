@@ -16,6 +16,7 @@ export const authApiSettings = {
   endpoints: {
     authorization: '/signin',
     registration: '/signup',
+    logout: '/signout',
     validation: '/users/me'
   },
   headers: {

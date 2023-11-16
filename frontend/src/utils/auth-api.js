@@ -7,6 +7,7 @@ class AuthApi {
     this._authorizationEndpoint = this._baseUrl + endpoints.authorization;
     this._registrationEndpoint = this._baseUrl + endpoints.registration;
     this._validationEndpoint = this._baseUrl + endpoints.validation;
+    this._logoutEndpoint = this._baseUrl + endpoints.logout;
   }
 
   register ({email, password}) {
@@ -55,6 +56,22 @@ class AuthApi {
           return response.json();
         }
         return Promise.reject(`Ошибка валидации токена: ${response.status}`)
+      })
+  }
+
+  logout () {
+    return fetch(
+      this._validationEndpoint,
+      {
+        method: 'GET',
+        credentials: 'include',
+        headers: this._headers,
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        }
+        return Promise.reject(`Ошибка выхода: ${response.status}`)
       })
   }
 }

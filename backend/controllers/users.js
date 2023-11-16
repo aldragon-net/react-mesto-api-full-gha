@@ -7,6 +7,7 @@ const { STATUSES } = require('../utils/statuses');
 const { MESSAGES } = require('../utils/messages');
 
 require('dotenv').config();
+
 const { NODE_ENV, JWT_SECRET } = process.env;
 const JWT_KEY = NODE_ENV === 'production' ? JWT_SECRET : 'dev-not-so-secret-key';
 const COOKIES_OPTIONS = NODE_ENV === 'production'
