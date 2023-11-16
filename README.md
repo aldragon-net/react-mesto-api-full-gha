@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.112.129
+IP 158.160.112.129
 
 Frontend https://aldragon.nomoredomainsmonster.ru
 
