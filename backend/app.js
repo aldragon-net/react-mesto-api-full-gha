@@ -7,7 +7,7 @@ const { celebrate, errors } = require('celebrate');
 const bodyParser = require('body-parser');
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
-const { createUser, login } = require('./controllers/users');
+const { createUser, login, logout } = require('./controllers/users');
 const { auth } = require('./middlewares/auth');
 const { cors } = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -48,9 +48,7 @@ app.get('/crash-test', () => {
 
 app.post('/signin', celebrate(userLoginSchema), login);
 app.post('/signup', celebrate(userCreationSchema), createUser);
-app.get('/signout', (req, res) => {
-  res.clearCookie('jwt').send({ message: 'Выход' });
-});
+app.post('/signout', logout);
 
 app.use('/users', auth, usersRouter);
 app.use('/cards', auth, cardsRouter);

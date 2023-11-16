@@ -63,7 +63,7 @@ class AuthApi {
     return fetch(
       this._validationEndpoint,
       {
-        method: 'GET',
+        method: 'POST',
         credentials: 'include',
         headers: this._headers,
       })
