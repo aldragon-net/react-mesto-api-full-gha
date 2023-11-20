@@ -1,0 +1,10 @@
+.mobile-menu_visible {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+.mobile-menu_visible {
+    display: none;
+  }
+}

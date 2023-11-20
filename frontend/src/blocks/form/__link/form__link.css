@@ -1,0 +1,10 @@
+.form__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (hover: hover) {
+  .form__link:hover {
+      opacity: 0.8;
+  }
+}

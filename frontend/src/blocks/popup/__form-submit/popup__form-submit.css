@@ -1,0 +1,44 @@
+.popup__form-submit {
+  margin: 19px 0 0;
+  padding: 0;
+  border: none;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#registration-form > .popup__form-subnit {
+  margin-top: 187px;
+}
+#authorization-form > .popup__form-subnit {
+  margin-top: 187px;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__form-submit {
+    font-size: 14px;
+    margin-top: 45px;
+    height: 46px;
+  }
+
+  #confirmation-form > .popup__form-submit {
+    margin-top: 16px;
+  }
+
+  #registration-form > .popup__form-subnit {
+    margin-top: 146px;
+  }
+  #authorization-form > .popup__form-subnit {
+    margin-top: 146px;
+  }
+}
+
+@media (hover: hover) {
+  .popup__form-submit:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}

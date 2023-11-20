@@ -1,0 +1,38 @@
+.form__submit {
+  margin: 19px 0 0;
+  padding: 0;
+  border: none;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#authorization-form > .form__submit, #registration-form > .form__submit {
+  margin-top: 187px;
+}
+
+@media screen and (max-width: 600px) {
+  .form__submit {
+    font-size: 14px;
+    margin-top: 45px;
+    height: 46px;
+  }
+
+  #confirmation-form > .form__submit {
+    margin-top: 16px;
+  }
+
+  #authorization-form > .form__submit, #registration-form > .form__submit {
+    margin-top: 144px;
+  }
+}
+
+@media (hover: hover) {
+  .form__submit:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}

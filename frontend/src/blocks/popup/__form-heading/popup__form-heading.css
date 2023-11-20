@@ -1,0 +1,23 @@
+.popup__form-heading {
+  margin: 0 0 53px;
+  padding: 0;
+  color: black;
+  font-size: 24px;
+  line-height: 1.0;
+  font-weight: 900;
+}
+
+#confirmation-form > .popup__form-heading {
+  margin: 0 0 16px;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__form-heading {
+    font-size: 18px;
+    margin-bottom: 75px;
+  }
+
+  #confirmation-form > .popup__form-heading {
+    margin: 0 0 16px;
+  }
+}

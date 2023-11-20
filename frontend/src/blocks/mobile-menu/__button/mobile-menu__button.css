@@ -1,0 +1,16 @@
+.mobile-menu__button {
+  background-color: black;
+  border: none;
+  padding: 0px;
+  margin: 0 auto;
+  color: #a9a9a9;
+  font-size: 18px;
+  line-height: 1.22;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .mobile-menu__button:hover {
+    opacity: 0.8;
+  }
+}

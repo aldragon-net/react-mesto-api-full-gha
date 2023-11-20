@@ -1,0 +1,16 @@
+.popup__close {
+  grid-area: close-button;
+  background-image: url("../../../images/icons/close.svg");
+  background-size: contain;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+@media (hover: hover) {
+  .popup__close:hover {
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,5 @@
+.form__input_palette_black {
+  background-color: black;
+  color: white;
+  border-bottom: 2px solid #cccccc;
+}
